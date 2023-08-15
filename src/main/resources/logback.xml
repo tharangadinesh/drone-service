@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- A console output -->
+   	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %thread %level %logger{15} %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+    	<file>/home/tharanga/log/musala_drone.log</file>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern><!-- Define the log message format -->
+        </encoder>
+    </appender>
+
+    <root level="INFO"> <!-- Set the default log level -->
+        <appender-ref ref="STDOUT" /> <!-- Attach the FILE appender to the root logger -->
+    </root>
+
+</configuration>
